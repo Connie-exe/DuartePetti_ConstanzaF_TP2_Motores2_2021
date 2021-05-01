@@ -5,6 +5,8 @@ public class Restart : MonoBehaviour
     public static Restart _Restart; //se llama a la variable _Restart
     public delegate void Restarting();
     public event Restarting OnRestart;
+    public float timeUp = 3f;
+    public float timeSlowMotion;
 
     private void Awake()
     {

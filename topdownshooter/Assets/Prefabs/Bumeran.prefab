@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27045ee5f26248449a356995696364c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 10
   startPos: {x: 0, y: 0, z: 0}
+  maxDistance: 10
   bumeranSpeed: 10

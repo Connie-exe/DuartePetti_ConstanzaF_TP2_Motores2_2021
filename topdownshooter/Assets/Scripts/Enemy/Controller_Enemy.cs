@@ -14,6 +14,7 @@ public class Controller_Enemy : MonoBehaviour
     public float patrolDistance = 5;//un float distancia de patrulla que vale 5
     public float destinationTime = 4;//un float tiempo de destinación que vale 4
     public float enemySpeed;//un float velocidad del enemigo
+    public GameObject powerup;
 
     void Start()
     {
@@ -22,11 +23,12 @@ public class Controller_Enemy : MonoBehaviour
         destination = new Vector3(UnityEngine.Random.Range(-10, 12), 1, UnityEngine.Random.Range(-12, 9));//el destino del enemigo tiene un valor random en todos sus 3 ejes
         agent = GetComponent<NavMeshAgent>();//se llama al navmeshagent
         player = GameObject.Find("Player");//se llama al objeto con etiqueta player
+        powerup = GameObject.Find("PowerUp");
     }
 
     public void Reset()
     {
-        Destroy(this.gameObject);//si se resetea el juego se destruye el script
+        Destroy(this.gameObject);//si se resetea el juego se destruye el objeto
     }
 
     internal virtual void OnCollisionEnter(Collision collision)//si collisiona con...
