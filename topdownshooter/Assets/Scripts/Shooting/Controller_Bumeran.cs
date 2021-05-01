@@ -12,9 +12,11 @@ public class Controller_Bumeran : MonoBehaviour
     private float travelDistance;//un float para la distancia de travel
     private float colliderTimer = 0.07f;//el tiempo del collider dura 0.07f
     private bool going;//un bool going
+    public Transform ObjectToFollow = null;
 
     void Start()
     {
+        ObjectToFollow = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         parent = Controller_Player._Player;//parent es igual a _Player de +l script Controller_Player
         rb = GetComponent<Rigidbody>();//se llama al rigidbody
         Restart._Restart.OnRestart += Reset;
@@ -64,6 +66,8 @@ public class Controller_Bumeran : MonoBehaviour
         rb.velocity = Vector3.zero;//el la velocidad del rigidbody vale 0 en todos los valores del vector3
         if (Controller_Player._Player != null)//si el _Player del script Controller_Player es distinto de null
         {
+
+            //direction = (Controller_Player._Player.transform.position);
             direction = -(this.transform.localPosition - parent.transform.localPosition).normalized;//dirección es igual a la posición del objeto menos la posición de parent
         }
     }
@@ -75,7 +79,10 @@ public class Controller_Bumeran : MonoBehaviour
 
     private void ReturnToPlayer()
     {
-        rb.AddForce(direction * bumeranSpeed);//el ridigbody se mueve en con la variable dirección a la velocidad de bumeranSpeed
+        ObjectToFollow = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        transform.position = Vector3.MoveTowards(transform.position, ObjectToFollow.transform.position, 7 * Time.deltaTime);
+        //this.transform.LookAt(direction);
+        //rb.AddForce(direction * bumeranSpeed);//el ridigbody se mueve en con la variable dirección a la velocidad de bumeranSpeed
     }
 
     private void OnDisable()
