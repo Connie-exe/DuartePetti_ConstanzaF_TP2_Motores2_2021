@@ -12,6 +12,10 @@ TagManager:
   - CannonBall
   - Bumeran
   - Armor
+  - Ally
+  - ZombieBullet
+  - ZombieHunter
+  - Dome
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - Enemy
   - Bumeran
   - Wall
-  - 
+  - Ally
   - 
   - 
   - 

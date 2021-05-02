@@ -4,7 +4,7 @@ public class Controller_Shooting : MonoBehaviour
 {
     public delegate void Shooting();
     public event Shooting OnShooting;
-    public static Ammo ammo;//contador ammo
+    public static Ammo ammo;//contador ammo    
     public static int ammunition;//int ammunition para usar en todos los scripts
     public static Controller_Shooting _ShootingPlayer;//variable _ShootingPlayer
     public Transform firePoint;//posición de firepoint
@@ -123,4 +123,7 @@ public enum Ammo //se crea el numerador
     Shotgun,
     Cannon,
     Bumeran
+    //ZombieGun,
+    //BulletHell
 }
+

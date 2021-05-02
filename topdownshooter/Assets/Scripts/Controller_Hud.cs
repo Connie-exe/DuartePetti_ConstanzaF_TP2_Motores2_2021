@@ -5,7 +5,7 @@ public class Controller_Hud : MonoBehaviour
 {
     public static bool gameOver; //declara un bool para indicar si el juego terminó, static para que se pueda llamar desde otros scripts
     public static int points; //declara un int para contar los puntos de forma exacta, static para que se pueda llamar desde otros scripts
-    private Ammo ammo; //declara un enumerador de munición
+    public static Ammo ammo; //declara un enumerador de munición
     public Text gameOverText;//declara el text para acceder al objeto de la ui, public para poder cambiarlo desde unity
     public Text pointsText;//idem
     public Text powerUpText;//idem
@@ -29,7 +29,7 @@ public class Controller_Hud : MonoBehaviour
     {
         if (gameOver)//si el bool gameover es true
         {
-            Time.timeScale = 0;//el tiempo vale 0
+            Time.timeScale = 0;
             gameOverText.text = "Game Over";//el texto de gameover escribirá lo que está puesto entre comillas
             gameOverText.gameObject.SetActive(true);//el objeto texto se hace visible en pantalla
         }
@@ -48,6 +48,7 @@ public class Controller_Hud : MonoBehaviour
             case Ammo.Bumeran://si es el segundo caso es Bumeran
                 powerUpText.text = "Gun: Bumeran - Ammo:" + Controller_Shooting.ammunition.ToString();//idem
                 break;//sale del switch
+
         }
 
         pointsText.text = "Score: " + points.ToString();//se actualizará en todo momento los puntos, pasando el valor de points a string

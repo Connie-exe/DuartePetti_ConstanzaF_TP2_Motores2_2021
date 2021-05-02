@@ -113,6 +113,8 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
+
+
     void OnDisable()//si el objeto se destruye
     {
         Controller_Shooting._ShootingPlayer.OnShooting -= Shoot;

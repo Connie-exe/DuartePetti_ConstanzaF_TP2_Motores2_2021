@@ -130,9 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0d3b3ab36df2744830e584212531fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 0
   patrolDistance: 5
   destinationTime: 4
+  enemySpeed: 0
+  powerup: {fileID: 0}
+  colorzombie: {fileID: 2100000, guid: f4250729a6830e946b4824d6d43892fb, type: 2}
+  zombietarget: {fileID: 0}
 --- !u!54 &-3746343931199097473
 Rigidbody:
   m_ObjectHideFlags: 0

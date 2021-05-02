@@ -151,3 +151,5 @@ MonoBehaviour:
   destinationTime: 4
   enemySpeed: 5
   powerup: {fileID: 3063224211381528949, guid: 1025762c90729e849bbefbebbb8ac2d9, type: 3}
+  colorzombie: {fileID: 2100000, guid: f4250729a6830e946b4824d6d43892fb, type: 2}
+  zombietarget: {fileID: 0}
