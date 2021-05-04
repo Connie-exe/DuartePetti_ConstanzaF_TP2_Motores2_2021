@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2633953599801994356}
   m_Layer: 0
   m_Name: Eraser
-  m_TagString: Dome
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,6 +12,8 @@ public class Controller_Player : MonoBehaviour
     private Vector3 startPos;//se declara un vector3 para la posición inicial
     private bool started = false;//un bool que comieza siendo false
     public float speed = 5;//un float speed que vale 5 y el public para poder modificarlo desde unity
+    public GameObject supportGamer;//se declara el objeto supportgamer
+    private bool _secondGamerActivated = false;//se declara un bool para saber si el support gamer fue activado o no
 
     private void Start()
     {
@@ -25,6 +27,7 @@ public class Controller_Player : MonoBehaviour
         Restart._Restart.OnRestart += Reset;
         started = true;//el bool started ahora es true
         Controller_Shooting._ShootingPlayer.OnShooting += Shoot;
+        _secondGamerActivated = false;
     }
 
     private void OnEnable()//si el objeto no ha sido destruído
@@ -43,6 +46,19 @@ public class Controller_Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");//el movimiento en el eje x va a ser controlado por los comandos axis "horizontal" (a,d)
         movement.z = Input.GetAxis("Vertical");//el movimiento en el eje x va a ser controlado por los comandos axis "horizontal" (w,s)
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//permite que el mouse se mueva en el mundo
+
+        if (Input.GetKeyDown(KeyCode.P) && _secondGamerActivated == false)//si se toca la tecla p y el bool del segundo player es false
+        {
+            Debug.Log("Second Gamer Activated");//se escribe en consola que el segundo player ha sido activado
+            supportGamer.SetActive(true);//se activa en unity al gameobject
+            _secondGamerActivated = true;//se cambia el valor del bool de confirmación a true
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && _secondGamerActivated == true)//si se toca la tecla p y el bool del segundo player es true
+        {
+            Debug.Log("Second Gamer Desactivated");//se escribe en consola que el segundo player se ha desactivado
+            supportGamer.SetActive(false);//se desactiva en unity al gameobject
+            _secondGamerActivated = false;//se cambia el valor del bool de confirmación a false
+        }
     }
 
     public virtual void FixedUpdate()

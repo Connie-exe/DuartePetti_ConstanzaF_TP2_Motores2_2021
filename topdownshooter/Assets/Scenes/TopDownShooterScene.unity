@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 210618769}
   - component: {fileID: 210618770}
   - component: {fileID: 210618771}
+  - component: {fileID: 210618772}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -330,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   speed: 5
+  supportGamer: {fileID: 989529429}
 --- !u!135 &210618764
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -475,6 +477,23 @@ MonoBehaviour:
   projectileSpeed: 10
   hellbullet: {fileID: 8696027894356675760, guid: 5e0d800bbbf7ed940b223c006d5361a1,
     type: 3}
+--- !u!114 &210618772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210618762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0ea7e6cbb269842acc4b68b2be0544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eraser: {fileID: 7700393267754695934, guid: 3307be5121b9d6b489b46f25f9549304, type: 3}
+  firePoint: {fileID: 210618767}
+  powerUpText: {fileID: 110215727}
+  timeUp: 3
+  timeEraser: 0
 --- !u!1 &232777844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4088e4a61ee3d409a2c3ae064a81c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUp: 3
-  timeSlowMotion: 0
 --- !u!4 &966616273
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,14 +1206,13 @@ GameObject:
   - component: {fileID: 989529431}
   - component: {fileID: 989529430}
   - component: {fileID: 989529436}
-  - component: {fileID: 989529437}
   m_Layer: 8
   m_Name: Support
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &989529430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,23 +1334,6 @@ MonoBehaviour:
   timeDome: 0
   _dome: {fileID: 1145633832}
   powerUpText: {fileID: 110215727}
---- !u!114 &989529437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989529429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0ea7e6cbb269842acc4b68b2be0544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eraser: {fileID: 7700393267754695934, guid: 3307be5121b9d6b489b46f25f9549304, type: 3}
-  firePoint: {fileID: 989529435}
-  powerUpText: {fileID: 110215727}
-  timeUp: 3
-  timeEraser: 0
 --- !u!1 &1145633832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,8 +1364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145633832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: -2.35, z: 0.18}
-  m_LocalScale: {x: 4.4603, y: 4.4603, z: 4.4603}
+  m_LocalPosition: {x: -0.79, y: -2.35, z: -0.28}
+  m_LocalScale: {x: 5.5927706, y: 4.4603, z: 5.4656515}
   m_Children: []
   m_Father: {fileID: 989529435}
   m_RootOrder: 1
@@ -1578,12 +1577,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
+  - {fileID: 4645737514011493386, guid: 59064efd2aff9ef4c89b8440da73f900, type: 3}
   - {fileID: 2159282467830187310, guid: 0eb637696870ce345a742bf455e221df, type: 3}
   - {fileID: 2790127802827880359, guid: 5968b87a31d37a74bb56b8177ff5e655, type: 3}
+  - {fileID: 7737472966567217403, guid: eaa494384bcd15b41a2b5daafa87d008, type: 3}
   - {fileID: 6634820057172235108, guid: b256966060867a84399028a674a0f7cc, type: 3}
   - {fileID: 3063443329344413150, guid: b7358b2f2b19ceb488ddcfa42eac8221, type: 3}
-  - {fileID: 4645737514011493386, guid: 59064efd2aff9ef4c89b8440da73f900, type: 3}
-  - {fileID: 7737472966567217403, guid: eaa494384bcd15b41a2b5daafa87d008, type: 3}
+  - {fileID: 7399578469296692940, guid: 418704b0359eb0a4887d45e0025b52b3, type: 3}
   positions:
   - {fileID: 232777844}
   - {fileID: 838482000}

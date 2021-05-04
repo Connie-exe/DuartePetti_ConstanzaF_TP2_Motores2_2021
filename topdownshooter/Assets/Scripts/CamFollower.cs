@@ -8,10 +8,8 @@ public class CamFollower : MonoBehaviour
 
     void Update()
     {
-        // Rotate the camera every frame so it keeps looking at the target
-        transform.LookAt(target);
-
-        // Same as above, but setting the worldUp parameter to Vector3.left in this example turns the camera on its side
+        // Rota la cámara en cada frame así sigue mirando a target
+        //transform.LookAt(target);
         transform.LookAt(target, Vector3.zero);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controller_SupportPlayer : MonoBehaviour
 {
+    //se utilizó el mismo script que el del Controller_Player
     private Vector3 movement;
     private Vector3 mousePos;
     private Rigidbody rb;
